@@ -6,14 +6,17 @@ abstract class PizzaMoscow(
     sicilianPizzaPrice,tyroleanPizzaPrice
 ) {
     override fun neapolitanPizzaSale() {
+        neapolitanPizzaCount++
         println("Спасибо за покупку неаполитанской пиццы в Москве")
     }
 
     override fun romanPizzaSale() {
+        romanPizzaCount++
         println("Спасибо за покупку римской пиццы в Москве")
     }
 
     override fun sicilianPizzaSale() {
+        sicilianPizzaCount++
         println("Спасибо за покупку сицилийской пиццы в Москве")
     }
 }
