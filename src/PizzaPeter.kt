@@ -1,4 +1,4 @@
-abstract class PizzaPeter(
+class PizzaPeter(
     neapolitanPizzaPrice: Double, romanPizzaPrice: Double,
     sicilianPizzaPrice: Double, tyroleanPizzaPrice: Double
 ) : PizzaCity(
@@ -18,6 +18,11 @@ abstract class PizzaPeter(
     override fun sicilianPizzaSale() {
         sicilianPizzaCount++
         println("Спасибо за покупку сицилийской пиццы в Санкт-Петербурге")
+    }
+
+    override fun tyroleanPizzaSale() {
+        tyroleanPizzaCount++
+        println("Спасибо за покупку тирольской пиццы в Санкт-Петербурге")
     }
 }
 
