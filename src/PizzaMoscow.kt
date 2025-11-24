@@ -1,4 +1,4 @@
-class PizzaMoscow (
+class PizzaMoscow(
     neapolitanPizzaPrice: Double, romanPizzaPrice: Double,
     sicilianPizzaPrice: Double, tyroleanPizzaPrice: Double
 ) : PizzaCity(
