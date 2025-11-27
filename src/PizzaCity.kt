@@ -11,4 +11,5 @@ abstract class PizzaCity (
     abstract fun romanPizzaSale ()
     abstract fun sicilianPizzaSale()
     abstract fun tyroleanPizzaSale ()
+    abstract fun showsStatistics(): Nothing
 }

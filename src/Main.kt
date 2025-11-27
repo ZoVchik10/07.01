@@ -10,24 +10,60 @@ fun main() {
         215.0, 250.5,
         180.5, 240.0
     )
+    var currentPizzaCity: PizzaCity
 
-    println("Добрый день! Выберите город")
-    println("1. Москва\n2. Санкт-Петербург\n")
+    while (true) {
+        println("Добрый день! Выберите город")
+        println("1. Москва\n2. Санкт-Петербург\n\n0.Выход и программы")
 
-    val city = readln()
-    if (city == "1") {
-        println("Выберите пиццу:")
-        println("1. Неаполитанская пицца\n2. Римская пицца\n3.Сицилийская пицца\n4.Тирольская пицца")
-    } else if (city == "2") {
-    } else {
-        println("ERROR")
-        exitProcess(1)
+        currentPizzaCity = when (readln()) {
+            "1" -> pizzaMoscow
+            "2" -> pizzaPeter
+            "0" -> break
+            else -> {
+                println("ERROR")
+                continue
+            }
+        }
+    }
+    println("Выберите пиццу:")
+    println(
+        "1. Неаполитанская пицца\n2. Римская пицца\n3.Сицилийская пицца\n4.Тирольская пицца"
+    )
+    selectPizza(currentPizzaCity)
+}
+private fun selectPizza(currentPizzaCity: PizzaCity){
+    when(readln()){
+        "1" -> {
+            currentPizzaCity.neapolitanPizzaSale()
+            selectAddService(currentPizzaCity)
+        }
+        "2" ->{
+            currentPizzaCity.romanPizzaSale()
+            selectAddService(currentPizzaCity)
+        }
+        "3" ->{
+            currentPizzaCity.tyroleanPizzaSale()
+            selectAddService(currentPizzaCity)
+        }
+        "4" ->{
+            currentPizzaCity.sicilianPizzaSale()
+            selectAddService(currentPizzaCity)
+        }
+        "0" -> currentPizzaCity.showsStatistics()
+        else -> {
+            println("ERROR")
+            exitProcess(1)
+        }
     }
 }
 
-
-
-
+fun selectAddService(currentPizzaCity: PizzaCity){
+    when (currentPizzaCity){
+        is CheckPhoto -> currentPizzaCity.showCheckPhoto()
+        is Drink -> currentPizzaCity.drinkSale()
+    }
+}
 
 
 
